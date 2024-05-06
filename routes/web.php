@@ -15,16 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('blog.master');
+    return view('blog.home');
 });
 
 
-Route::get('/ahmed', function () {
-    return view('omar');
-});
-
-Route::get('/alkasaby', function () {
-    return view('omar');
+Route::get('/create', function () {
+    return view('blog.createPost');
 });
 
 Auth::routes();
