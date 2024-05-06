@@ -23,6 +23,10 @@ Route::get('/ahmed', function () {
     return view('omar');
 });
 
+Route::get('/alkasaby', function () {
+    return view('omar');
+});
+
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

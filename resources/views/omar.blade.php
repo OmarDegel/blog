@@ -149,9 +149,7 @@
 						</div>
 					</a>
 					<a href="single.html" class="h-entry v-height gradient">
-
 						<div class="featured-img" style="background-image: url('images/img_4_horizontal.jpg');"></div>
-
 						<div class="text">
 							<span class="date">Apr. 14th, 2022</span>
 							<h2>Thought you loved Python? Wait until you meet Rust</h2>
