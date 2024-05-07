@@ -71,7 +71,7 @@
                         </form>
 
                         <ul class="js-clone-nav d-none d-lg-inline-block text-start site-menu mx-auto">
-                            <li class="active"><a href="index.html">Home</a></li>
+                            <li class="active"><a href="{{ route('blog') }}">Home</a></li>
 
                             <li><a href="category.html">profile</a></li>
                             <li><a href="category.html">Business</a></li>

@@ -1,5 +1,9 @@
 @extends('blog.master')
 @section('content')
+@if(\Session::has('message'))
+        <div class="alert alert-success">{{ \Session::get('message') }}</div>
+        {{-- {{ \Session::forget('message') }} --}}
+@endif
 <div class="hero overlay inner-page bg-primary py-5">
     <div class="container">
         <div class="row align-items-center justify-content-center text-center pt-5">
@@ -45,21 +49,21 @@
                 </div>
             </div>
             <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-                <form action="#">
+                <form action="{{ route('storePost') }}" method="post" enctype="multipart/form-data">
+                    @csrf
                     <div class="row">
                         <div class="col-6 mb-3">
-                            <input type="text" class="form-control" placeholder="Your Name">
+                            <input type="text" class="form-control" placeholder="Title" name="title">
                         </div>
                         <div class="col-6 mb-3">
-                            <input type="email" class="form-control" placeholder="Your Email">
+                            <input type="file" class="form-control" placeholder="Image" name="path_photo">
                         </div>
                         <div class="col-12 mb-3">
-                            <input type="text" class="form-control" placeholder="Subject">
+                            <input type="text" class="form-control" placeholder="Short Description"  name="short_description">
                         </div>
                         <div class="col-12 mb-3">
-                            <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
+                            <textarea name="description" id="" cols="30" rows="7" class="form-control" placeholder="Description"></textarea>
                         </div>
-
                         <div class="col-12">
                             <input type="submit" value="Send Message" class="btn btn-primary">
                         </div>
