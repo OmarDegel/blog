@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\blog\PostController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +14,18 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('blogs.home');
+
+Route::get('/',[PostController::class,'home'])->name('blog');
+Route::get('/create',[PostController::class,'createPost'])->name('createPost');
+Route::post('/store/post',[PostController::class,'storePost'])->name('storePost');
+Route::get('/singlePost/{slug}',[PostController::class,'showPost'])->name('showPost');
+Route::post('/edit/post/{slug}',[PostController::class,'storePost'])->name('editPost');
+Route::get('/hi',function(){
+return view("blog.profile");
 });
+
+
+
 
 
 Auth::routes();

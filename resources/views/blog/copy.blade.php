@@ -273,7 +273,12 @@
         <!-- END main-content -->
 
         <div class="col-md-12 col-lg-4 sidebar">
-          
+          <div class="sidebar-box search-form-wrap">
+            <form action="#" class="sidebar-search-form">
+              <span class="bi-search"></span>
+              <input type="text" class="form-control" id="s" placeholder="Type a keyword and hit enter">
+            </form>
+          </div>
           <!-- END sidebar-box -->
           <div class="sidebar-box">
             <div class="bio text-center">
@@ -291,7 +296,7 @@
               </div>
             </div>
           </div>
-          <!-- END sidebar-box -->  
+          <!-- END sidebar-box -->
           <div class="sidebar-box">
             <h3 class="heading">Popular Posts</h3>
             <div class="post-entry-sidebar">
@@ -516,10 +521,10 @@
 
       <div class="row mt-5">
         <div class="col-12 text-center">
-          <!-- 
+          <!--
               **==========
-              NOTE: 
-              Please don't remove this copyright link unless you buy the license here https://untree.co/license/  
+              NOTE:
+              Please don't remove this copyright link unless you buy the license here https://untree.co/license/
               **==========
             -->
 
@@ -551,6 +556,6 @@
     <script src="js/counter.js"></script>
     <script src="js/custom.js"></script>
 
-    
+
   </body>
   </html>
