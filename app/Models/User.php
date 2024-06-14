@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Post;
+use App\Models\Like;
+use App\Models\Friend;
 
 class User extends Authenticatable
 {
@@ -22,6 +24,10 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'image',
+        'short_decription',
+        'slug',
+        'status'
     ];
 
     /**
@@ -43,8 +49,29 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function post()
+    public function posts()
     {
         return $this->hasMany(Post::class);
+    }
+
+
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
+    public function friends()
+    {
+        return $this->hasMany(Friend::class);
+    }
+
+    public function users()
+    {
+        return $this->hasMany(User::class);
     }
 }

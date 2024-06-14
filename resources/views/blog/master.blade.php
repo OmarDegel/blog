@@ -29,6 +29,7 @@
 @include('blog.layouts.footer')
 
 @include('blog.layouts.scripts')
+@livewireScripts
 
 </body>
 

@@ -26,4 +26,5 @@
 
 
     <title>Blogy &mdash; Free Bootstrap 5 Website Template by Untree.co</title>
+@livewireStyles
 </head>

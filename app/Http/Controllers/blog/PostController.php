@@ -10,8 +10,8 @@ use Illuminate\Support\Str;
 class PostController extends Controller
 {
     public function home(){
-        $posts=Post::get();
-        return view('blog.home',compact('posts'));
+        // $posts=Post::get();
+        return view('blog.home');
     }
 
     public function createPost(){
@@ -35,13 +35,20 @@ class PostController extends Controller
             'user_id'=>auth()->user()->id
         ]);
 
-        return  redirect()->back()->with('message','تم اضافه البوست بنجاح');
+        return  redirect()->route('your_profile')->with('message','تم اضافه البوست بنجاح');
     }
 
     public function showPost($slug){
-        $post=Post::where('slug',$slug)->first();
-        return view('blog.singlePost',compact('post'));
+        $post=Post::with('comments')->where('slug',$slug)->first();
+
+        $popular_posts = Post::withCount('comments')->orderBy('comments_count', 'desc')->paginate(5);
+        return view('blog.singlePost',compact('post'),compact('popular_posts'));
     }
+
+
+
+
+
 
 
 }
